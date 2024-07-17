@@ -167,9 +167,7 @@ async def download_homepage(site_name, url, headers):
             "curl", "-o", f"{file_path}", "-L", "--retry", "3", "--retry-max-time", "5", "--insecure", url
         ]
         
-        # Add retry delay only if not on Windows
-        if not sys.platform.startswith('win'):
-            curl_command.extend(["--retry-delay", "0.5"])
+       
 
         # Execute curl command
         process = subprocess.Popen(curl_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
