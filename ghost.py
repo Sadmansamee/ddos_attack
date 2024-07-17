@@ -196,7 +196,7 @@ async def delete_homepage(site_name):
 
 # Function to handle site processing
 async def handle_site(site_name, url, headers):
-    asyncio.sleep(random.randint(1, 5))
+    await asyncio.sleep(random.randint(1, 5))
     try:
         downloaded = await download_homepage(site_name, url, headers)
         if downloaded:
