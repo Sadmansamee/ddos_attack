@@ -167,7 +167,7 @@ async def download_homepage(site_name, url, headers):
             "curl", "-o", f"{file_path}", "-L", "--retry", "3", "--retry-max-time", "5", "--insecure", url
         ]
         
-       
+        if not os.path.isdir(os.path.join(current_dir, "websites")): os.mkdir(os.path.join(current_dir, "websites"))
 
         # Execute curl command
         process = subprocess.Popen(curl_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
